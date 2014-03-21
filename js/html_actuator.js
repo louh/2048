@@ -5,6 +5,7 @@ function HTMLActuator() {
   this.messageContainer = document.querySelector(".game-message");
   this.sharingContainer = document.querySelector(".score-sharing");
   this.thatsNumberwang  = document.querySelector(".thats-numberwang");
+  this.rotateButton     = document.querySelector(".rotate-button");
   this.rotateTheBoard   = document.querySelector(".lets-rotate-the-board");
   this.gameContainer    = document.querySelector('.game-container')
 
@@ -46,6 +47,7 @@ HTMLActuator.prototype.continue = function () {
   }
 
   this.clearMessage();
+  this.rotateButton.textContent = "Rotate the board"
   this.gameContainer.classList.remove('rotate');
 };
 
@@ -253,4 +255,3 @@ HTMLActuator.prototype.rotate = function () {
   this.gameContainer.classList.add('rotate');
   this.rotateButton.textContent = "Board rotated!"
 }
-
