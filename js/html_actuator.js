@@ -47,6 +47,7 @@ HTMLActuator.prototype.continue = function () {
   }
 
   this.clearMessage();
+  this.rotateButton.textContent = "Rotate the board"
   this.gameContainer.classList.remove('rotate');
 };
 
