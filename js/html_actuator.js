@@ -197,7 +197,7 @@ HTMLActuator.prototype.updateScore = function (score) {
         self = this.boardContainer;
 
     request.onload = loadGif;
-    request.open('GET', 'http://api.giphy.com/v1/gifs/random?api_key=dc6zaTOxFJmzC', true);
+    request.open('GET', 'https://api.giphy.com/v1/gifs/random?api_key=dc6zaTOxFJmzC', true);
     request.send(null);
 
     function loadGif () {
