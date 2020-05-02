@@ -9,6 +9,11 @@ function HTMLActuator() {
   this.rotateButton     = document.querySelector(".rotate-button");
   this.boardContainer   = document.querySelector(".board-container");
 
+  this.numberwangAudio = new Audio("thatsnumberwang.mp3");
+  this.rotateBoardAudio = new Audio("letsrotatetheboard.mp3");
+  this.wangernumbedAudio = new Audio("wangernumbed.mp3");
+  this.theNumberwangAudio = new Audio("thenumberwang.mp3");
+
   this.score = 0;
 }
 
@@ -246,6 +251,13 @@ HTMLActuator.prototype.message = function (won) {
   this.clearContainer(this.sharingContainer);
   this.sharingContainer.appendChild(this.scoreTweetButton());
   twttr.widgets.load();
+
+  if (won) {
+    this.theNumberwangAudio.play();
+  }
+  else {
+    this.wangernumbedAudio.play();
+  }
 };
 
 HTMLActuator.prototype.clearMessage = function () {
@@ -275,6 +287,13 @@ HTMLActuator.prototype.announce = function (message) {
   announce.classList.add("announcement");
   announce.textContent = message;
   this.announcer.appendChild(announce);
+
+  if (message == "That’s Numberwang!") {
+    this.numberwangAudio.play();
+  }
+  else if (message == "Let’s rotate the board!") {
+    this.rotateBoardAudio.play();
+  }
 };
 
 /*
